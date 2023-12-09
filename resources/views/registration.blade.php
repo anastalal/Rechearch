@@ -14,7 +14,7 @@
 <body>
   
 <div class="flex justify-center mx-auto m-8">
-    <form action="{{ route('application') }}" method="POST" class="grid grid-cols-1
+    <form action="{{ secure_url('application') }}" method="POST" class="grid grid-cols-1
     md:grid-cols-2 gap-4 p-4 shadow-md  rounded border border-gray-200">
         {!! csrf_field() !!}
         <div class="mb-4">

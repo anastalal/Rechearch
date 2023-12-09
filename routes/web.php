@@ -24,4 +24,4 @@ Route::get('/', function () {
 // Route::get('/registration', Registration::class);
 Route::post('/upload','App\Http\Controllers\HomeController@upload')->name('upload');
 Route::get('/registration','App\Http\Controllers\HomeController@index')->name('registration');
-Route::post('/registration','App\Http\Controllers\HomeController@create')->name('application');
+Route::post('/application','App\Http\Controllers\HomeController@create')->name('application');
