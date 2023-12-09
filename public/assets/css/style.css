@@ -499,6 +499,11 @@ strong {
   padding-bottom: 150px;
 }
 
+@media (max-width: 767px) {
+  .hero-section{
+    padding-bottom: 20px;
+  }
+}
 .hero-section .input-group {
   background-color: var(--white-color);
   border-radius: var(--border-radius-large);
