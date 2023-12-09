@@ -1194,8 +1194,9 @@ blockquote {
 
 
 .section-heading {
-  font-size: 6vw;
+  font-size: 5vw;
   font-weight: 700;
+  text-transform: uppercase;
   background: linear-gradient(-45deg, #3db3c5, #274685);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

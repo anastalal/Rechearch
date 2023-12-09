@@ -70,7 +70,7 @@
                             </li> -->
     
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#register">Registrastion</a>
+                                <a class="nav-link click-scroll" href="{{ route('registration') }}">Registrastion</a>
                             </li>
                         </ul>
                         <div class="d-none d-lg-block">
@@ -107,7 +107,7 @@
                             </div>
                             <div class="left-text">
                                 <p class=" wow fadeInDown" data-wow-delay=".2s">
-                                    We Are Here to foster a collaborative environment that inspires innovative thinking,
+                                    We Are here to foster a collaborative environment that inspires innovative thinking,
                                     encourages knowledge sharing, and propels scientific discovery.
                                      Our research day will focus on exploring novel solutions for pressing medical challenges, while also providing an opportunity for budding researchers to learn from and interact with seasoned professional.
                                 </p>
@@ -150,7 +150,7 @@
                 </div>
             </section>
 
-            <section class="section" id="goals">
+            {{-- <section class="section" id="goals">
                 <div class="container">
                   <div class="row justify-content-center text-center mb-5">
                     <div class="col-md-5 wow fadeInDown" data-wow-delay=".2s">
@@ -188,21 +188,21 @@
                   </div>
           
                 </div>
-              </section>
+              </section> --}}
               <section>
                 <div class="container my-5" id="eligibility">
                     <h1 class="section-heading text-center my-4">Eligibility</h1>
                     <div class="row">
                         <div class="col-md-4 my-2">
                           <div class="step">
-                            <span class="number">01</span>
+                            {{-- <span class="number">01</span> --}}
                             <h3>Any emergency medical resident</h3>
                             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p> -->
                           </div>
                         </div>
                         <div class="col-md-4 my-2">
                           <div class="step">
-                            <span class="number">02</span>
+                            {{-- <span class="number">02</span> --}}
                             <h3>Organizing Committee</h3>
                             <br><br>
                             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p> -->
@@ -210,7 +210,7 @@
                         </div>
                         <div class="col-md-4 my-2">
                           <div class="step">
-                            <span class="number">03</span>
+                            {{-- <span class="number">03</span> --}}
                             <h3>Department of emergency medicine, NGHA</h3>
                             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p> -->
                           </div>
@@ -238,7 +238,7 @@
                         </div>
                         <div class="col-xl-7 col-lg-5">
                             <div class="contact-btn text-start text-lg-end">
-                                <a href="#" class="theme-btn">Registrastion Here</a>
+                                <a href="{{ route('registration') }}" class="theme-btn">Registrastion Here</a>
                             </div>
                         </div>
                     </div>
@@ -287,7 +287,7 @@
           
               </section>
 
-              <section id="features" class="features">
+              {{-- <section id="features" class="features">
 
                 <div class="container aos-init wow fadeInDown" data-wow-delay=".2s">
           
@@ -345,7 +345,7 @@
           
                 </div>
           
-              </section>
+              </section> --}}
               <section class="subscribe-section pt-70 pb-70 img-bg my-5" id="register">
                 <div class="container">
                     <div class="row align-items-center">
@@ -360,7 +360,7 @@
                                 <input type="text" name="subs-email" id="subs-email" placeholder="Your Email">
                                 <button type="submit"><i class="lni lni-telegram-original"></i></button>
                             </form> -->
-                            <a href="#" class="theme-btn">Registrastion Here</a>
+                            <a href="{{ route('registration') }}" class="theme-btn">Registrastion Here</a>
                         </div>
                     </div>
                 </div>
@@ -400,13 +400,13 @@
                             <p>researchER.Day@gmail.com</p>
                           </div>
                         </div>
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                           <div class="info-box">
                             <i class="bi bi-clock"></i>
                             <h3>Open Hours</h3>
                             <p>Monday - Friday<br>9:00AM - 05:00PM</p>
                           </div>
-                        </div>
+                        </div> --}}
                       </div>
           
                     </div>

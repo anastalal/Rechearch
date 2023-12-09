@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ $title ?? 'Page Title' }}</title>
+        <title>Emergency Medicine Department Research | Registration Page</title>
         @vite('resources/css/app.css')
         <link href="assets/vendor/filepond/filepond.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
     </head>
 <body>
-    <!-- resources/views/livewire/emergency-research-registration.blade.php -->
-
+  
 <div class="flex justify-center mx-auto m-8">
-    <form action="{{ route('application') }}" method="POST" class="grid lg:grid-cols-2 gap-4 p-4 shadow-md  rounded border border-gray-200">
+    <form action="{{ route('application') }}" method="POST" class="grid grid-cols-1
+    md:grid-cols-2 gap-4 p-4 shadow-md  rounded border border-gray-200">
         {!! csrf_field() !!}
         <div class="mb-4">
             <label for="first_name" class="block text-sm font-medium text-gray-700">First Name:</label>
@@ -112,7 +112,7 @@
           
         </div>
 
-        <div class="mb-4 col-span-2">
+        <div class="mb-4 md:col-span-2">
             <label for="co_authors" class="block text-sm font-medium text-gray-700">Co-author(s):</label>
             <div id="repeater" class="reperter">
                 <button type="button"  data-repeater-create class="px-4 py-2 bg-blue-500 text-white rounded-md">
