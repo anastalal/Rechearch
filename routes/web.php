@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+use App\Livewire\Registration;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/test', function () {
+//     return view('test');
+// });
+// Route::get('/registration', Registration::class);
+Route::post('/upload','App\Http\Controllers\HomeController@upload')->name('upload');
+Route::get('/registration','App\Http\Controllers\HomeController@index')->name('registration');
+Route::post('/registration','App\Http\Controllers\HomeController@create')->name('application');
