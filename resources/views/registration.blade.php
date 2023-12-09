@@ -7,7 +7,7 @@
         <title>Emergency Medicine Department Research | Registration Page</title>
         {{-- @vite('resources/css/app.css') --}}
         <script src="https://cdn.tailwindcss.com"></script>
-        <link href="{{ asset('assets/vendor/filepond/filepond.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('assets/vendor/filepond/filepond.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
     </head>
@@ -166,8 +166,8 @@
     </form>
    
 </div>
-<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/js/jquery-repeater.js') }}"></script>
+<script src="{{ secure_asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ secure_asset('assets/js/jquery-repeater.js') }}"></script>
 {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
 @if(session()->has('message'))
     <script>
@@ -212,8 +212,8 @@
     });
    
 </script>
- <script src="{{ asset('assets/vendor/filepond/filepond-plugin-file-validate-type.min.js') }}"></script>
- <script src="{{ asset('assets/vendor/filepond/filepond.js') }}"></script>
+ <script src="{{ secure_asset('assets/vendor/filepond/filepond-plugin-file-validate-type.min.js') }}"></script>
+ <script src="{{ secure_asset('assets/vendor/filepond/filepond.js') }}"></script>
  
  {{-- <script src="assets/vendor/filepond/filepond-plugin-file-validate-type.min.js"></script> --}}
 
