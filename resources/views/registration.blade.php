@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>Emergency Medicine Department Research | Registration Page</title>
-        @vite('resources/css/app.css')
-        {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+        {{-- @vite('resources/css/app.css') --}}
+        <script src="https://cdn.tailwindcss.com"></script>
         <link href="{{ secure_asset('assets/vendor/filepond/filepond.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
