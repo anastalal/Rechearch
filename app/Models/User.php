@@ -7,9 +7,10 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-
-class User extends Authenticatable
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
+use Illuminate\Foundation\Auth\User as Authenticatable ;
+class User extends Authenticatable implements FilamentUser
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -48,5 +49,9 @@ class User extends Authenticatable
     public function application(): HasOne
     {
         return $this->hasOne(Application::class);
+    }
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return str_ends_with($this->email, '@admin.com') && $this->hasVerifiedEmail();
     }
 }
