@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>Emergency Medicine Department Research | Registration Page</title>
-        {{-- @vite('resources/css/app.css') --}}
-        <script src="https://cdn.tailwindcss.com"></script>
+        @vite('resources/css/app.css')
+        {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
         <link href="{{ secure_asset('assets/vendor/filepond/filepond.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
@@ -15,8 +15,8 @@
   
 <div class="flex justify-center mx-auto m-8">
     <form 
-    action="{{ route('application') }}"
-    {{-- action="{{ secure_url('application') }}" --}}
+    {{-- action="{{ route('application') }}" --}}
+    action="{{ secure_url('application') }}"
      method="POST" class="grid grid-cols-1
     md:grid-cols-2 gap-4 p-4 shadow-md  rounded border border-gray-200">
         {!! csrf_field() !!}
