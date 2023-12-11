@@ -18,8 +18,10 @@ class Application extends Model
     //     'figures_file_path',
     //     'SCHFS',
     // ];
-    protected $fillable = ['user_id', 'artical', 'Affiliation', 'Co_authors', 'abstract_file_path', 'figures_file_path', 'SCHFS'];
-
+    protected $fillable = ['user_id', 'artical', 'author','title', 'Affiliation', 'Co_authors', 'abstract_file_path', 'figures_file_path', 'SCHFS'];
+    // protected $casts = [
+    //     'Co_authors' =>'array'
+    // ];
     public function user(){
         return $this->belongsTo(User::class);
     }

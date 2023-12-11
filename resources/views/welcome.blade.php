@@ -69,7 +69,7 @@
                             </li> -->
     
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="{{ route('registration') }}">Registrastion</a>
+                                <a class="nav-link click-scroll" href="{{ secure_url('registration') }}">Registrastion</a>
                             </li>
                         </ul>
                         <div class="d-none d-lg-block">
@@ -235,7 +235,7 @@
                         </div>
                         <div class="col-xl-7 col-lg-5">
                             <div class="contact-btn text-start text-lg-end">
-                                <a href="{{ route('registration') }}" class="theme-btn">Registrastion Here</a>
+                                <a href="{{ secure_url('registration') }}" class="theme-btn">Registrastion Here</a>
                             </div>
                         </div>
                     </div>
@@ -357,7 +357,7 @@
                                 <input type="text" name="subs-email" id="subs-email" placeholder="Your Email">
                                 <button type="submit"><i class="lni lni-telegram-original"></i></button>
                             </form> -->
-                            <a href="{{ route('registration') }}" class="theme-btn">Registrastion Here</a>
+                            <a href="{{ secure_url('registration') }}" class="theme-btn">Registrastion Here</a>
                         </div>
                     </div>
                 </div>

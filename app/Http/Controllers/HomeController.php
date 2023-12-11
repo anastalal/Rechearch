@@ -18,12 +18,16 @@ class HomeController extends Controller
         'id_number' => 'nullable|integer|unique:users,Id_number',
         'artical' => 'required|string',
         'affiliation' => 'required|string',
-        'co_authors' => 'required|array', // تغيير json إلى array
+        'co_authors.*' => 'required|array', // تغيير json إلى array
         'abstract' => 'required|string',
         'figures' => 'required|string',
-        'SCHFS' => 'nullable|integer'
+        'SCHFS' => 'nullable|integer',
+        'title' => 'required|string',
+        'author' => 'required|string',
     ];
     public function index(){
+        // $ds = Application::find(8);
+        // dd($ds->Co_authors[0]->co_authors);
         return view('registration');
     }
     //
@@ -40,8 +44,9 @@ class HomeController extends Controller
     
     public function create(Request $request)
     {
-        
+        // dd($request->input('co_authors'));
        $this->validate($request, $this->rules);
+    //    dd($request->input('co_authors'));
     
         try {
             // إنشاء مستخدم جديد
@@ -59,6 +64,8 @@ class HomeController extends Controller
                 'user_id' => $user->id,
                 'artical' => $request->input('artical'),
                 'Affiliation' => $request->input('affiliation'),
+                'author' => $request->input('author'),
+                'title' => $request->input('title'),
                'Co_authors' => json_encode($request->input('co_authors')),
                 // 'Co_authors' => json_encode(['مؤلف1', 'مؤلف2']),
                 'abstract_file_path' => $request->input('abstract'),

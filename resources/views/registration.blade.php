@@ -7,14 +7,17 @@
         <title>Emergency Medicine Department Research | Registration Page</title>
         {{-- @vite('resources/css/app.css') --}}
         <script src="https://cdn.tailwindcss.com"></script>
-        <link href="{{ secure_asset('assets/vendor/filepond/filepond.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/filepond/filepond.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
     </head>
 <body>
   
 <div class="flex justify-center mx-auto m-8">
-    <form action="{{ secure_url('application') }}" method="POST" class="grid grid-cols-1
+    <form 
+    action="{{ route('application') }}"
+    {{-- action="{{ secure_url('application') }}" --}}
+     method="POST" class="grid grid-cols-1
     md:grid-cols-2 gap-4 p-4 shadow-md  rounded border border-gray-200">
         {!! csrf_field() !!}
         <div class="mb-4">
@@ -44,6 +47,7 @@
             @enderror
         </div>
         
+        
         <div class="mb-4">
             <label for="id_number" class="block text-sm font-medium text-gray-700">ID Number:</label>
             <input type="number" placeholder="ID Number" id="id_number" 
@@ -62,6 +66,22 @@
             @error('SCHFS')
             <span class="text-red-500 text-sm">{{ $message }}</span>
         @enderror
+        </div>
+        <div class="mb-4">
+            <label for="title" class="block text-sm font-medium text-gray-700">Article Title:</label>
+            <input type="text" placeholder="Article Title" id="title" value="{{ old('title')}}"
+                   name="title" class="mt-1 p-2 border rounded-md w-full @error('title') border-red-500 @enderror">
+            @error('title')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="mb-4">
+            <label for="author" class="block text-sm font-medium text-gray-700">Presenting author:</label>
+            <input type="text" placeholder="Presenting author" id="author" value="{{ old('author')}}"
+                   name="author" class="mt-1 p-2 border rounded-md w-full @error('author') border-red-500 @enderror">
+            @error('author')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="topic" class="block text-sm font-medium text-gray-700">Article Topic:</label>
@@ -97,13 +117,13 @@
         <div class="mb-4">
             <label for="affiliation" class="block text-sm font-medium text-gray-700">Affiliation:</label>
             <select id="affiliation" name="affiliation" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
-                <option value="KAMC">King Abdulaziz Medical City (KAMC) Riyadh</option>
-                <option value="KSMC">King Saud Medical City (KSMC)</option>
-                <option value="KFSH">King Faisal Specialist Hospital & Research Center (KFSH)</option>
-                <option value="PSMMC">Prince Sultan Military Medical City (PSMMC)</option>
-                <option value="PMAH">Prince Mohammed bin Abdulaziz Hospital (PMAH)</option>
-                <option value="KKUH">King Khalid University Hospital (KKUH)</option>
-                <option value="SFH">Security Force Hospital (SFH) – Riyadh</option>
+                <option value="King Abdulaziz Medical City (KAMC) Riyadh">King Abdulaziz Medical City (KAMC) Riyadh</option>
+                <option value="King Saud Medical City (KSMC)">King Saud Medical City (KSMC)</option>
+                <option value="King Faisal Specialist Hospital & Research Center (KFSH)">King Faisal Specialist Hospital & Research Center (KFSH)</option>
+                <option value="Prince Sultan Military Medical City (PSMMC)">Prince Sultan Military Medical City (PSMMC)</option>
+                <option value="Prince Mohammed bin Abdulaziz Hospital (PMAH)">Prince Mohammed bin Abdulaziz Hospital (PMAH)</option>
+                <option value="King Khalid University Hospital (KKUH)">King Khalid University Hospital (KKUH)</option>
+                <option value="Security Force Hospital (SFH) – Riyadh">Security Force Hospital (SFH) – Riyadh</option>
                 <option value="Other">Other</option>
             </select>
             @error('affiliation')
@@ -117,14 +137,17 @@
             <label for="co_authors" class="block text-sm font-medium text-gray-700">Co-author(s):</label>
             <div id="repeater" class="reperter">
                 <button type="button"  data-repeater-create class="px-4 py-2 bg-blue-500 text-white rounded-md">
-                    Add Co-auther
+                    Add Co-author
                 </button>
                 <div  class="items" data-repeater-list="co_authors">
                     <div class="item flex justify-center align-middle gap-2 mt-5" data-repeater-item>
                         <div class="w-full">
-                            <label for="co_authors" class="block text-sm font-medium text-gray-700">Co-author(s):</label>
-                            <input name="co_authors" name="co_authors" type="text" id="co_authors"  class="mt-1 p-2 border border-gray-300 rounded-md w-full">
-                            @error('co_authors')
+                            <label for="co_authors" class="label block text-sm font-medium text-gray-700">Co-author(s)
+                                <span class="counter" id="counter"></span>
+                            </label>
+                            <input name="co_authors[]" required type="text" id="co_authors"  class="mt-1 p-2 border
+                            @error('co_authors.*') border-red-300  @enderror rounded-md w-full">
+                            @error('co_authors.*')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                              @enderror
                         </div>
@@ -166,8 +189,8 @@
     </form>
    
 </div>
-<script src="{{ secure_asset('assets/js/jquery.min.js') }}"></script>
-<script src="{{ secure_asset('assets/js/jquery-repeater.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery-repeater.js') }}"></script>
 {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
 @if(session()->has('message'))
     <script>
@@ -186,8 +209,8 @@
     $("#repeater").repeater({
         isFirstItemUndeletable: true,
         show: function() {
-            var formLabel = $(this).find('.form-label');
-            var label = $(this).find('.activity-group-text');
+            var formLabel = $(this).find('.label');
+            var label = $(this).find('.counter');
             console.log($(this).data('itemName'));
             var itemName = $(this).data('itemName');
             var numbers = itemName.match(/\d+/g);
@@ -197,6 +220,7 @@
             console.log(incrementedNumbers)
             var va = label.text();
             va++;
+            formLabel.text('co-auther')
             label.text(incrementedNumbers);
           
             $(this).slideDown();
@@ -212,8 +236,8 @@
     });
    
 </script>
- <script src="{{ secure_asset('assets/vendor/filepond/filepond-plugin-file-validate-type.min.js') }}"></script>
- <script src="{{ secure_asset('assets/vendor/filepond/filepond.js') }}"></script>
+ <script src="{{ asset('assets/vendor/filepond/filepond-plugin-file-validate-type.min.js') }}"></script>
+ <script src="{{ asset('assets/vendor/filepond/filepond.js') }}"></script>
  
  {{-- <script src="assets/vendor/filepond/filepond-plugin-file-validate-type.min.js"></script> --}}
 
