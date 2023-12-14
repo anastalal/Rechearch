@@ -10,7 +10,7 @@
     <!-- Facebook, WhatsApp, Instagram, Twitter, and other popular social media -->
     <meta property="og:title" content="Emergency Medicine Department Research Day"> 
     <meta property="og:description" content="Fostering a collaborative environment for innovative thinking, knowledge sharing, and scientific discovery. Exploring novel solutions for pressing medical challenges.">
-    <meta property="og:image" content="{{ asset('assets/images/logo.png') }}">
+    <meta property="og:image" content="{{ secure_asset('assets/images/logo.png') }}">
     <meta property="og:url" content="{{ url('/') }}">
     <meta name="twitter:card" content="summary_large_image">
     
@@ -29,13 +29,13 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
                         
-        <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/css/bootstrap-icons.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">      
+        <link href="{{ secure_asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('assets/css/bootstrap-icons.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('assets/css/style.css') }}" rel="stylesheet">      
         <script src="https://cdn.logwork.com/widget/countdown.js"></script>
-        <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/tiny-slider.css') }}">
+        <link href="{{ secure_asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ secure_asset('assets/css/animate.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('assets/css/tiny-slider.css') }}">
         
 
     </head>
@@ -44,7 +44,7 @@
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <a class="navbar-brand" href="index.html">
-                        <img src="{{ asset('assets/images/logo.png') }}" height="60" width="80" alt="">
+                        <img src="{{ secure_asset('assets/images/logo.png') }}" height="60" width="80" alt="">
                     </a>
                     <div class="d-lg-none ms-auto me-4">
                         <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
@@ -111,7 +111,7 @@
                         </div>
                         <div class="col-lg-1"></div>
                         <div class="col-lg-5 col-md-12 col-sm-12 align-self-center" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s" data-scroll-reveal-id="4" data-scroll-reveal-initialized="true" data-scroll-reveal-complete="true">
-                            <img src="{{ asset('assets/images/about.jpg') }}" class="rounded img-fluid d-block mx-auto wow fadeInDown" data-wow-delay=".2s" alt="App">
+                            <img src="{{ secure_asset('assets/images/about.jpg') }}" class="rounded img-fluid d-block mx-auto wow fadeInDown" data-wow-delay=".2s" alt="App">
                         </div>
                     </div>
                     <div class="row">
@@ -127,19 +127,19 @@
                     <div class="client-logo-wrapper">
                         <div class="client-logo-carousel d-flex align-items-center justify-content-between">
                           <div class="client-logo">
-                            <img src="{{ asset('assets/images/kasao.jpg') }}" alt="">
+                            <img src="{{ secure_asset('assets/images/kasao.jpg') }}" alt="">
                         </div>
                         <div class="client-logo">
-                            <img src="{{ asset('assets/images/logo2.jpeg') }}" alt="">
+                            <img src="{{ secure_asset('assets/images/logo2.jpeg') }}" alt="">
                         </div>
                         <div class="client-logo">
-                            <img src="{{ asset('assets/images/logo3.png') }}" class="edit" alt="">
+                            <img src="{{ secure_asset('assets/images/logo3.png') }}" class="edit" alt="">
                         </div>
                         <div class="client-logo">
-                            <img src="{{ asset('assets/images/logo4.jpg') }}" class="edit" alt="">
+                            <img src="{{ secure_asset('assets/images/logo4.jpg') }}" class="edit" alt="">
                         </div>
                         <div class="client-logo">
-                            <img src="{{ asset('assets/images/logo5.png') }}" alt="">
+                            <img src="{{ secure_asset('assets/images/logo5.png') }}" alt="">
                         </div>
                         
                         </div>
@@ -460,11 +460,11 @@
 
 
         <!-- JAVASCRIPT FILES -->
-        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-        <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
-        <script src="{{ asset('assets/js/custom.js') }}"></script>
-        <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+        <script src="{{ secure_asset('assets/js/jquery.min.js') }}"></script>
+        <script src="{{ secure_asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ secure_asset('assets/js/jquery.sticky.js') }}"></script>
+        <script src="{{ secure_asset('assets/js/custom.js') }}"></script>
+        <script src="{{ secure_asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
         
         <script>
             new Swiper('.testimonials-slider', {
@@ -495,8 +495,8 @@
   
         </script>
          <!-- <script src="assets/vendor/aos/aos.js"></script> -->
-         <script src="{{ asset('assets/js/wow.min.js') }}"></script>
-         <script src="{{ asset('assets/js/tiny-slider.js') }}"></script>
+         <script src="{{ secure_asset('assets/js/wow.min.js') }}"></script>
+         <script src="{{ secure_asset('assets/js/tiny-slider.js') }}"></script>
          <script>
             //WOW Scroll Spy
 	var wow = new WOW({
