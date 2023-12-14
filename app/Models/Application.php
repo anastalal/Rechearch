@@ -18,7 +18,11 @@ class Application extends Model
     //     'figures_file_path',
     //     'SCHFS',
     // ];
-    protected $fillable = ['user_id', 'artical', 'author','title', 'Affiliation', 'Co_authors', 'abstract_file_path', 'figures_file_path', 'SCHFS'];
+
+    protected $fillable = ['user_id', 'artical', 'author','title',
+     'Affiliation', 'Co_authors', 'abstract_file_path', 'figures_file_path', 'SCHFS',
+     'title_or_position','link','conference','oral'
+    ];
     // protected $casts = [
     //     'Co_authors' =>'array'
     // ];

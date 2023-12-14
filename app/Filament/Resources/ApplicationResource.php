@@ -64,19 +64,13 @@ class ApplicationResource extends Resource
             Infolists\Components\TextEntry::make('Affiliation')->label('Affiliation'),
             Infolists\Components\TextEntry::make('author')->label('Presenting author'),
             Infolists\Components\TextEntry::make('SCHFS')->label('SCHFS'),
-            // Infolists\Components\TextEntry::make('Co_authors')->label('Co_authors')
-            // ->value(function ($record) {
-            //     $co_authors = json_decode($record->getModel()->Co_authors, true);
-            //     return implode(', ', array_column($co_authors, 'co_authors'));
-            // }),,
             Infolists\Components\TextEntry::make('Co_authors')->label('Co_authors'),
-            // ->value(function ($record) {
-            //     $co_authors = json_decode($record->getModel()->Co_authors, true);
-            //     $co_authors = array_filter($co_authors, function ($author) {
-            //         return isset($author['co_authors']);
-            //     });
-            //     return implode(', ', array_column($co_authors, 'co_authors'));
-            // }),
+            Infolists\Components\TextEntry::make('title_or_position')->label('Title or Position'),
+            Infolists\Components\TextEntry::make('link')->label('Link if published before'),
+            Infolists\Components\TextEntry::make('oral')->label('Oral or Poster'),
+            Infolists\Components\TextEntry::make('conference')->label('previously conference'),
+           
+           
 
           Infolists\Components\TextEntry::make('created_at')->label('Registration Date')
                 ->columnSpanFull(),

@@ -21,7 +21,7 @@
     md:grid-cols-2 gap-4 p-4 shadow-md  rounded border border-gray-200">
         {!! csrf_field() !!}
         <div class="mb-4">
-            <label for="first_name" class="block text-sm font-medium text-gray-700">First Name:</label>
+            <label for="first_name" class="block text-sm font-medium text-gray-700">First Name: <span class="text-red-400">*</span></label>
             <input type="text" placeholder="First Name" value="{{ old('first_name') }}" id="first_name" name="first_name" 
                 class="mt-1 p-2 border rounded-md w-full @error('first_name') border-red-500 @enderror">
             @error('first_name')
@@ -39,7 +39,7 @@
         </div>
         
         <div class="mb-4">
-            <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email: <span class="text-red-400">*</span></label>
             <input type="email" placeholder="Email" id="email" value="{{ old('email')}}"
                    name="email" class="mt-1 p-2 border rounded-md w-full @error('email') border-red-500 @enderror">
             @error('email')
@@ -57,6 +57,19 @@
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
         </div>
+        <div class="mb-4">
+            <label for="title_or_position" class="block text-sm font-medium text-gray-700">Title or Position: <span class="text-red-400">*</span></label>
+            <select id="title_or_position" name="title_or_position" class="mt-1 p-2 border @error('title_or_position') border-red-500 @enderror rounded-md w-full">
+                <option value="">Please Select</option>
+                <option value="Student">Student</option>
+                <option value="Resident">Resident</option>
+                <option value="professor">Professor</option>
+                <option value="physician">physician </option>
+            </select>
+            @error('title_or_position')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
+        </div>
         
         <div class="mb-4">
             <label for="SCHFS" class="block text-sm font-medium text-gray-700">ISCHFS registration number (If exists)</label>
@@ -68,7 +81,7 @@
         @enderror
         </div>
         <div class="mb-4">
-            <label for="title" class="block text-sm font-medium text-gray-700">Article Title:</label>
+            <label for="title" class="block text-sm font-medium text-gray-700">Article Title: <span class="text-red-400">*</span></label>
             <input type="text" placeholder="Article Title" id="title" value="{{ old('title')}}"
                    name="title" class="mt-1 p-2 border rounded-md w-full @error('title') border-red-500 @enderror">
             @error('title')
@@ -76,7 +89,7 @@
             @enderror
         </div>
         <div class="mb-4">
-            <label for="author" class="block text-sm font-medium text-gray-700">Presenting author:</label>
+            <label for="author" class="block text-sm font-medium text-gray-700">Presenting author: <span class="text-red-400">*</span></label>
             <input type="text" placeholder="Presenting author" id="author" value="{{ old('author')}}"
                    name="author" class="mt-1 p-2 border rounded-md w-full @error('author') border-red-500 @enderror">
             @error('author')
@@ -84,8 +97,9 @@
             @enderror
         </div>
         <div class="mb-4">
-            <label for="topic" class="block text-sm font-medium text-gray-700">Article Topic:</label>
-            <select id="topic" name="artical" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+            <label for="topic" class="block text-sm font-medium text-gray-700">Article Topic: <span class="text-red-400">*</span></label>
+            <select id="topic" name="artical" class="mt-1 p-2 border @error('artical') border-red-500 @enderror rounded-md w-full">
+                <option value="">Please Select</option>
                 <option value="EMS">EMS</option>
                 <option value="Resuscitation">Resuscitation</option>
                 <option value="Toxicology">Toxicology</option>
@@ -115,8 +129,9 @@
         <!-- Add similar code for Last Name, Email, ID Number, Article Topic, Article Title, Presenting author, etc. -->
 
         <div class="mb-4">
-            <label for="affiliation" class="block text-sm font-medium text-gray-700">Affiliation:</label>
-            <select id="affiliation" name="affiliation" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+            <label for="affiliation" class="block text-sm font-medium text-gray-700">Affiliation: <span class="text-red-400">*</span></label>
+            <select id="affiliation" name="affiliation" class="mt-1 p-2 border @error('affiliation') border-red-500 @enderror rounded-md w-full">
+               <option value="">Please Select</option>
                 <option value="King Abdulaziz Medical City (KAMC) Riyadh">King Abdulaziz Medical City (KAMC) Riyadh</option>
                 <option value="King Saud Medical City (KSMC)">King Saud Medical City (KSMC)</option>
                 <option value="King Faisal Specialist Hospital & Research Center (KFSH)">King Faisal Specialist Hospital & Research Center (KFSH)</option>
@@ -132,9 +147,45 @@
             <!-- If Other is selected, show an input field for other affiliation -->
           
         </div>
+        <div class="mb-4">
+            <label for="link" class="block text-sm font-medium text-gray-700">Has this Research been published before?, If yes, kindly provide the link to the article
+                </label>
+            <input type="text" placeholder="link" id="link" 
+                   value="{{ old('link')}}"
+                   name="link" class="mt-1 p-2 border rounded-md w-full @error('link') border-red-500 @enderror">
+            @error('link')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="mb-4">
+            <label for="conference" class="block text-sm font-medium text-gray-700">Has this Research been presented previously at any conference?, if yes, which conference?
+
+                </label>
+            <input type="text" placeholder="Conference Name" id="conference" 
+                   value="{{ old('conference')}}"
+                   name="conference" class="mt-1 p-2 border rounded-md w-full @error('conference') border-red-500 @enderror">
+            @error('conference')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="mb-4 ">
+            <label for="" class="block text-sm font-medium text-gray-700 mb-2">Oral or poster?</label>
+            <div class="flex align-middle items-center gap-4">
+                <div class="flex items-center ">
+                    <input  id="default-radio-1" type="radio" value="oral" name="oral" class="w-4 h-4  bg-gray-100 border-gray-300   ">
+                    <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Oral</label>
+                </div>
+                <div class="flex items-center">
+                    <input checked  id="default-radio-2" type="radio" value="poster" name="oral" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  ">
+                    <label for="default-radio-2" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Poster</label>
+                </div>
+
+            </div>
+           
+        </div>
 
         <div class="mb-4 md:col-span-2">
-            <label for="co_authors" class="block text-sm font-medium text-gray-700">Co-author(s):</label>
+            <label for="co_authors" class="block text-sm font-medium text-gray-700">Co-author(s): <span class="text-red-400">*</span></label>
             <div id="repeater" class="reperter">
                 <button type="button"  data-repeater-create class="px-4 py-2 bg-blue-500 text-white rounded-md">
                     Add Co-author
@@ -165,14 +216,14 @@
            
         </div>
         <div class="mb-4">
-            <label for="abstract" class="block text-sm font-medium text-gray-700">Abstract Upload</label>
+            <label for="abstract" class="block text-sm font-medium text-gray-700">Abstract Upload <span class="text-red-400">*</span></label>
             <input type="file" class="filepond" name="abstract" name="abstract" id="abstract">
             @error('abstract')
             <span class="text-red-500 text-sm">{{ $message }}</span>
         @enderror
         </div>
         <div class="mb-4">
-            <label for="figures" class="block text-sm font-medium text-gray-700">Figures and tables upload</label>
+            <label for="figures" class="block text-sm font-medium text-gray-700">Figures and tables upload <span class="text-red-400">*</span></label>
             <input type="file" class="filepond2" name="figures"  name="figures" id="figures">
             @error('figures')
             <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -189,6 +240,12 @@
     </form>
    
 </div>
+<footer>
+    <div class="text-center text-sm text-gray-300">
+      <p>Developed by <a href="https://wa.me/+967738233130">Coderans</a></p>
+    </div>
+  </footer>
+
 <script src="{{ secure_asset('assets/js/jquery.min.js') }}"></script>
 <script src="{{ secure_asset('assets/js/jquery-repeater.js') }}"></script>
 {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}

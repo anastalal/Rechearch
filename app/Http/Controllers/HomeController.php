@@ -18,12 +18,16 @@ class HomeController extends Controller
         'id_number' => 'nullable|integer|unique:users,Id_number',
         'artical' => 'required|string',
         'affiliation' => 'required|string',
-        'co_authors.*' => 'required|array', // تغيير json إلى array
+        'co_authors' => 'required|array', // تغيير json إلى array
         'abstract' => 'required|string',
         'figures' => 'required|string',
         'SCHFS' => 'nullable|integer',
         'title' => 'required|string',
         'author' => 'required|string',
+        'conference' => 'nullable|string',
+        'link' => 'nullable|url',
+        'title_or_position' => 'required|string',
+        'oral' => 'nullable|string',
     ];
     public function index(){
         // $ds = Application::find(8);
@@ -71,6 +75,10 @@ class HomeController extends Controller
                 'abstract_file_path' => $request->input('abstract'),
                 'figures_file_path' => $request->input('figures'),
                 'SCHFS' => $request->input('SCHFS'),
+                'conference' => $request->input('conference'),
+                'link' => $request->input('link'),
+                'title_or_position' => $request->input('title_or_position'),
+                'oral' =>$request->input('oral'),
                 // إضافة حقول الطلب حسب الحاجة
             ]);
     
